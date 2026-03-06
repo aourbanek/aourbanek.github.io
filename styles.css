@@ -18,6 +18,10 @@ body {
   font-weight: bold;
 }
 
+.information {
+  padding: 20px;
+}
+
 .nav-buttons button {
   margin-left: 10px;
   padding: 8px 14px;
@@ -30,4 +34,19 @@ body {
 
 .nav-buttons button:hover {
   background-color: #777;
+}
+
+#movie-grid-container {     
+   padding: 20px;
+   width: 1500px;
+   display: grid;
+   grid-template-columns: auto auto auto;
+}
+
+#movie-grid-container > div {
+   border: 1px solid black;
+}
+
+#grid-item-a {
+   grid-column: 1 / 4;
 }
