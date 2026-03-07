@@ -25,6 +25,27 @@
     <div>[Movie 1 Info]</div> 
     <div>[Movie 2 Info]</div>
     <div>[Movie 3 Info]</div>
-  </div> 
+  </div>
+
+  <div class="submit-movie">
+  	<h3>Submit a Movie:</h3>
+    <form action="https://aourbanek.github.io/" method="POST">
+    <p>
+      <label for="filmname">Film name:</label>
+      <input type="text" name="filmname" id="filmname" required>
+    </p>
+    <p>
+      <label for="filmgenre">Film genre:</label>
+      <input type="text" name="filmgenre" id="filmgenre" maxlength="4" required>
+    </p>
+    <p>
+      <label for="filmrating">Your rating of the film out of 10 (optional):</label>
+      <input type="number" name="filmrating" id="filmrating" min="1" max="10">
+    </p>
+      
+    <input type="submit" value="Submit Film">
+    </form>
+  </div>
+  
 </body>
 </html>
