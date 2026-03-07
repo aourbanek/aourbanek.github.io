@@ -5,16 +5,15 @@
 </head>
   
 <body>
-  <div class="header">
+  <div id="header">
     <div class="title">aourbanekMDB</div>
     <div class="nav-buttons">
-      <button>Home (WIP)</button>
-      <button>See All Films (TBA)</button>
-      <button>Credits (TBA)</button>
+      <button onclick="window.location.href='#information'">Home (Top of page)</button>
+      <button onclick="window.location.href='#submit-movie'">Submit a Film</button>
     </div>
   </div>
 
-  <div class ="information">
+  <div id="information">
     <h2>Welcome to aourbanekMDB</h2>
     <p>A CIS 393 Project</p>
     <p>This page will support adding movies to a database and then collecting reviews on added movies.</p>
@@ -27,7 +26,7 @@
     <div>[Movie 3 Info]</div>
   </div>
 
-  <div class="submit-movie">
+  <div id="submit-movie">
   	<h3>Submit a Movie:</h3>
     <form action="https://aourbanek.github.io/" method="POST">
     <p>
@@ -39,8 +38,8 @@
       <input type="text" name="filmgenre" id="filmgenre" required>
     </p>
     <p>
-      <label for="filmrating">Your rating of the film out of 10 (optional):</label>
-      <input type="number" name="filmrating" id="filmrating" min="1" max="10">
+      <label for="filmrating">Give the film a first rating out of 10(optional):</label>
+      <input type="number" name="filmrating" id="filmrating" min="0" max="10">
     </p>
       
     <input type="submit" value="Submit Film">
