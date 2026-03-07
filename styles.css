@@ -22,6 +22,10 @@ body {
   padding: 20px;
 }
 
+.submit-movie {
+  padding: 20px;
+}
+
 .nav-buttons button {
   margin-left: 10px;
   padding: 8px 14px;
@@ -38,7 +42,7 @@ body {
 
 #movie-grid-container {     
    padding: 20px;
-   width: 1500px;
+   width: auto;
    display: grid;
    grid-template-columns: auto auto auto;
 }
