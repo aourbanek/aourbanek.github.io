@@ -42,15 +42,21 @@ body {
 
 #movie-grid-container {     
    padding: 20px;
-   width: auto;
    display: grid;
-   grid-template-columns: auto auto auto;
-}
-
-#movie-grid-container > div {
-   border: 1px solid black;
+   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+   gap: 15px;
 }
 
 #grid-item-a {
-   grid-column: 1 / 4;
+   grid-column: 1 / -1;
+   font-weight: bold;
+   border: none;
+}
+
+.movie-card {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
