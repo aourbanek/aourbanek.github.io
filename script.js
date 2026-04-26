@@ -35,6 +35,9 @@ document.getElementById("movie-form").addEventListener("submit", function(e) {
 function renderMovies() {
     const container = document.getElementById("movie-grid-container");
 
+    // Keep header, remove old movies
+    container.innerHTML = `<div id="grid-item-a">Recently Added Movies</div>`;
+
     movies.slice().reverse().forEach(movie => {
         const div = document.createElement("div");
         div.classList.add("movie-card");
