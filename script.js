@@ -67,7 +67,11 @@ function renderMovies(list = movies) {
         `;
 
         container.appendChild(div);
-    });
+    })
+
+    if (movies.length != 0) {
+        container.innerHTML = `<div id="grid-item-b"><button onclick="exportJSON()">Export Database</button></div>`;
+    };
 }
 
 // Top bar navigation buttons
@@ -100,4 +104,15 @@ function deleteMovie(id) {
     movies = movies.filter(m => m.id !== id);
     localStorage.setItem("movies", JSON.stringify(movies));
     renderMovies();
+}
+
+// Export database JSON
+function exportJSON() {
+    const dataStr = JSON.stringify(movies, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "movies_database.json";
+    a.click();
 }
