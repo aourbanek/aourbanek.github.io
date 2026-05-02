@@ -46,6 +46,7 @@ function renderMovies() {
             <h4>${movie.name}</h4>
             <p><strong>Genre:</strong> ${movie.genre}</p>
             <p><strong>Rating:</strong> ${movie.rating !== null ? movie.rating + "/10" : "N/A"}</p>
+            <button onclick="editMovie(${movie.id})">Edit</button>
         `;
 
         container.appendChild(div);
