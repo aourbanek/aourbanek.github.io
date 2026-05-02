@@ -31,8 +31,20 @@ document.getElementById("movie-form").addEventListener("submit", function(e) {
     this.reset();
 });
 
+// Movie search (only display movies that match search)
+document.getElementById("search").addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+
+    const filtered = movies.filter(m =>
+        m.name.toLowerCase().includes(query) ||
+        m.genre.toLowerCase().includes(query)
+    );
+
+    renderMovies(filtered);
+});
+
 // Render function
-function renderMovies() {
+function renderMovies(list = movies) {
     const container = document.getElementById("movie-grid-container");
 
     if (movies.length != 0) {
