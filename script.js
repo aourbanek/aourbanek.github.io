@@ -44,7 +44,7 @@ document.getElementById("search").addEventListener("input", function() {
 });
 
 // Render function
-function renderMovies(list = movies) {
+function renderMovies(movies) {
     const container = document.getElementById("movie-grid-container");
 
     if (movies.length != 0) {
@@ -70,7 +70,10 @@ function renderMovies(list = movies) {
     })
 
     if (movies.length != 0) {
-        container.innerHTML = `<div id="grid-item-b"><button onclick="exportJSON()">Export Database</button></div>`;
+        const exportDiv = document.createElement("div");
+        exportDiv.id = "grid-item-b";
+        exportDiv.innerHTML = `<button onclick="exportJSON()">Export Database</button>`;
+        container.appendChild(exportDiv);
     };
 }
 
