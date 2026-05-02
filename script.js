@@ -47,8 +47,11 @@ document.getElementById("search").addEventListener("input", function() {
 function renderMovies(list = movies) {
     const container = document.getElementById("movie-grid-container");
 
-    if (list.length != 0) {
-        container.innerHTML = `<div id="grid-item-a">Your Movies</div>`;
+    // Clear FIRST
+    container.innerHTML = "";
+
+    if (list.length !== 0) {
+        container.innerHTML += `<div id="grid-item-a">Your Movies</div>`;
     }
 
     list.slice().reverse().forEach(movie => {
@@ -60,21 +63,18 @@ function renderMovies(list = movies) {
             <p><strong>Genre:</strong> ${movie.genre}</p>
             <p><strong>Rating:</strong> ${movie.rating !== null ? movie.rating + "/10" : "N/A"}</p>
             <button onclick="editMovie(${movie.id})">Edit</button>
-        `;
-
-        div.innerHTML += `
             <button onclick="deleteMovie(${movie.id})">Delete</button>
         `;
 
         container.appendChild(div);
-    })
+    });
 
-    if (list.length != 0) {
+    if (list.length !== 0) {
         const exportDiv = document.createElement("div");
         exportDiv.id = "grid-item-b";
         exportDiv.innerHTML = `<button onclick="exportJSON()">Export Database</button>`;
         container.appendChild(exportDiv);
-    };
+    }
 }
 
 // Top bar navigation buttons
