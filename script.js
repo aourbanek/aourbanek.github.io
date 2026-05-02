@@ -49,6 +49,10 @@ function renderMovies() {
             <button onclick="editMovie(${movie.id})">Edit</button>
         `;
 
+        div.innerHTML += `
+            <button onclick="deleteMovie(${movie.id})">Delete</button>
+        `;
+
         container.appendChild(div);
     });
 }
@@ -74,6 +78,13 @@ function editMovie(id) {
     if (newGenre) movie.genre = newGenre;
     if (newRating !== null) movie.rating = Number(newRating);
 
+    localStorage.setItem("movies", JSON.stringify(movies));
+    renderMovies();
+}
+
+// Deleting existing movie
+function deleteMovie(id) {
+    movies = movies.filter(m => m.id !== id);
     localStorage.setItem("movies", JSON.stringify(movies));
     renderMovies();
 }
