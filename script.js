@@ -44,14 +44,14 @@ document.getElementById("search").addEventListener("input", function() {
 });
 
 // Render function
-function renderMovies(movies) {
+function renderMovies(list = movies) {
     const container = document.getElementById("movie-grid-container");
 
-    if (movies.length != 0) {
+    if (list.length != 0) {
         container.innerHTML = `<div id="grid-item-a">Your Movies</div>`;
     }
 
-    movies.slice().reverse().forEach(movie => {
+    list.slice().reverse().forEach(movie => {
         const div = document.createElement("div");
         div.classList.add("movie-card");
 
@@ -69,7 +69,7 @@ function renderMovies(movies) {
         container.appendChild(div);
     })
 
-    if (movies.length != 0) {
+    if (list.length != 0) {
         const exportDiv = document.createElement("div");
         exportDiv.id = "grid-item-b";
         exportDiv.innerHTML = `<button onclick="exportJSON()">Export Database</button>`;
