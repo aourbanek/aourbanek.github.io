@@ -53,6 +53,12 @@ body {
    border: none;
 }
 
+#grid-item-b {
+   grid-column: 1 / -1;
+   font-weight: bold;
+   border: none;
+}
+
 .movie-card {
   background: #1e1e1e;
   padding: 15px;
