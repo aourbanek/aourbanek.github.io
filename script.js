@@ -61,3 +61,19 @@ function scrollToTop() {
 function scrollToSubmit() {
     document.getElementById("submit-movie").scrollIntoView({ behavior: "smooth" });
 }
+
+// Editing existing movie
+function editMovie(id) {
+    const movie = movies.find(m => m.id === id);
+
+    const newName = prompt("Edit name:", movie.name);
+    const newGenre = prompt("Edit genre:", movie.genre);
+    const newRating = prompt("Edit rating:", movie.rating);
+
+    if (newName) movie.name = newName;
+    if (newGenre) movie.genre = newGenre;
+    if (newRating !== null) movie.rating = Number(newRating);
+
+    localStorage.setItem("movies", JSON.stringify(movies));
+    renderMovies();
+}
