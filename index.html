@@ -20,25 +20,24 @@
   </div>
 
   <div id="movie-grid-container" class="movie-grid-container">
-    <!-- Movies will be inserted here -->
+    <!-- Movies inserted here with JS -->
   </div>
 
   <div id="submit-movie" class="submit-movie">
     <h3>Submit a Movie:</h3>
 
-    <!-- Still temporary while workarounds for a database are figured out -->
     <form id="movie-form">
       <p>
         <label for="filmname">Film name:</label>
         <input type="text" id="filmname" required>
       </p>
       <p>
-        <label for="filmgenre">Film genre:</label>
-        <input type="text" id="filmgenre" required>
+        <label for="filmgenre">Film genre (optional):</label>
+        <input type="text" id="filmgenre">
       </p>
       <p>
-        <label for="filmrating">Rating (0-10, optional):</label>
-        <input type="number" id="filmrating" min="0" max="10">
+        <label for="filmrating">Rating (0-10):</label>
+        <input type="number" id="filmrating" min="0" max="10" required>
       </p>
 
       <input type="submit" value="Submit Film">
