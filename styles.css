@@ -1,3 +1,7 @@
+:root {
+  --text-color: white;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -20,10 +24,12 @@ body {
 
 .information {
   padding: 20px;
+  color: var(--text-color);
 }
 
 .submit-movie {
   padding: 20px;
+  color: var(--text-color);
 }
 
 .nav-buttons button {
@@ -45,6 +51,7 @@ body {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
    gap: 15px;
+   color: var(--text-color);
 }
 
 #grid-item-a {
